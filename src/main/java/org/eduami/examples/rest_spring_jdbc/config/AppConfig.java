@@ -17,9 +17,9 @@ public class AppConfig {
     	BasicDataSource dataSource = new BasicDataSource(); // Create a connection pool
     	dataSource.setInitialSize(2); //set initial and max number of connections in pool 
         dataSource.setDriverClassName(com.mysql.jdbc.Driver.class.getName());
-        dataSource.setUrl("jdbc:mysql://localhost/demo");
+        dataSource.setUrl("jdbc:mysql://"+(System.getenv("CIS_MYSQL_PORT_3306_TCP_ADDR")==null?"localhost":System.getenv("CIS_MYSQL_PORT_3306_TCP_ADDR"))+"/cisdb");
         dataSource.setUsername("root");
-        dataSource.setPassword("Test@123");
+        dataSource.setPassword(System.getenv("CIS_MYSQL_ENV_MYSQL_ROOT_PASSWORD")==null?"Test@123":System.getenv("CIS_MYSQL_ENV_MYSQL_ROOT_PASSWORD"));
         return dataSource;
 
     }
