@@ -9,7 +9,14 @@
 	<packaging>war</packaging>
 	<build>
 		<finalName>cis</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -65,4 +72,5 @@
 
 
 	</dependencies>
+
 </project>
